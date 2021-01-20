@@ -1,0 +1,18 @@
+app:
+  # 数据根目录
+  data_root_dir: "./data"
+
+http:
+  timeout: "10s"
+
+log:
+  #  filename: "/var/log/example-api/error.log"
+  max_backups: 2
+  max_size: 200 # MB
+  level: "debug"
+  enable_console: true
+
+mysql:
+  default:
+    dsn: "user:password@tcp(127.0.0.1:3306)/example?timeout=5s&readTimeout=5s&writeTimeout=5s&parseTime=true&loc=Local&charset=utf8,utf8mb4&clientFoundRows=true"
+    enable_log: true
