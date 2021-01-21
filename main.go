@@ -9,6 +9,8 @@ import (
 	v1 "github.com/flamefatex/example-api/handler/v1"
 	v2 "github.com/flamefatex/example-api/handler/v2"
 	v2_ext "github.com/flamefatex/example-api/handler/v2/external"
+	"github.com/flamefatex/example-api/service"
+	"github.com/flamefatex/example-api/service/example"
 	"github.com/flamefatex/log"
 	"github.com/flamefatex/log/rotation"
 	protos_v2 "github.com/flamefatex/protos/goout/example-api/v2"
@@ -39,6 +41,8 @@ func main() {
 	initLogger()
 	// print service version
 	log.Infof("serviceName: %s, version: %s, build: %s", serviceName, Version, GitCommit)
+	// 初始化并启动svc
+	initAndRunSvc()
 	// 启动gin
 	runGinServer()
 	// 启动grpc gateway
@@ -70,6 +74,18 @@ func initLogger() {
 		panic(err)
 	}
 	zlog = logger
+}
+
+func initAndRunSvc() {
+	// init
+	exampleSvc := example.NewExampleSvc()
+
+	// register
+	sm := service.NewSvcManager()
+	sm.RegisterSvc(exampleSvc)
+
+	// run
+	sm.Run()
 }
 
 // gin
