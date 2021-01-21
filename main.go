@@ -82,9 +82,7 @@ func runGinServer() {
 	// gin Run the server
 	go func() {
 		log.Debugf("start gin server")
-		if log.Mode() == log.ModeProduction {
-			gin.SetMode(gin.ReleaseMode)
-		}
+
 		log.Fatal(engine.Run(ginAddr))
 	}()
 }
