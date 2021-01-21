@@ -48,8 +48,8 @@ github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/flamefatex/config v1.0.2 h1:+MROdhSEZY9t3al6fVT7M40A/IYqpm5K/bLGmRUh2zI=
 github.com/flamefatex/config v1.0.2/go.mod h1:WWYV6Qv+SfsysiG5p6KoUPvf0p8mLq+lJ2SNUTxkUrU=
-github.com/flamefatex/log v1.0.3 h1:6mS9ESyJwD43PK04yfihoRBIJn55fpVXLTW1+gsIy7w=
-github.com/flamefatex/log v1.0.3/go.mod h1:2drTqILwnUXRW10LptE+sShB2tRWcQWrL0MFbU08Hsg=
+github.com/flamefatex/log v1.0.4 h1:WBKOWM9b+VuwMy0WyQpaZGE+Fc8dMWyESMzjLiEy8S8=
+github.com/flamefatex/log v1.0.4/go.mod h1:2drTqILwnUXRW10LptE+sShB2tRWcQWrL0MFbU08Hsg=
 github.com/flamefatex/protos v0.0.2 h1:v88mAvZPfRJSBVIkw5Yfd89QpB+J0sQlSdO86t/ooEE=
 github.com/flamefatex/protos v0.0.2/go.mod h1:aBhcgJuMQQvwYyd3WPsh3qmKM/rjiUoH/lV/0K2JHiI=
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=
