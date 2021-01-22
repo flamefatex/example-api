@@ -24,6 +24,8 @@ func main() {
 	initLogger()
 	// print service version
 	log.Infof("serviceName: %s, version: %s, build: %s", serviceName, Version, GitCommit)
+	// 初始化客户端
+	initClient()
 	// 初始化并启动svc
 	initAndRunSvc()
 	// 启动gin
