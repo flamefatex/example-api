@@ -1,6 +1,7 @@
 package example
 
 import (
+	"context"
 	"sync"
 	"time"
 
@@ -36,7 +37,7 @@ func (s *exampleSvc) Name() string {
 	return name
 }
 
-func (s *exampleSvc) Run() (err error) {
+func (s *exampleSvc) Run(ctx context.Context) (err error) {
 	round := 1
 	ticker := time.NewTicker(2 * time.Second)
 	go func() {

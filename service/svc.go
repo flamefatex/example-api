@@ -1,6 +1,8 @@
 package service
 
+import "context"
+
 type Svc interface {
 	Name() string
-	Run() (err error)
+	Run(ctx context.Context) (err error)
 }

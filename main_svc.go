@@ -1,11 +1,13 @@
 package main
 
 import (
+	"context"
+
 	"github.com/flamefatex/example-api/service"
 	"github.com/flamefatex/example-api/service/example"
 )
 
-func initAndRunSvc() {
+func initAndRunSvc(ctx context.Context) {
 	// init
 	exampleSvc := example.NewExampleSvc()
 
@@ -14,5 +16,5 @@ func initAndRunSvc() {
 	sm.RegisterSvc(exampleSvc)
 
 	// run
-	sm.Run()
+	sm.Run(ctx)
 }

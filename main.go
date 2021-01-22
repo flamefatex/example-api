@@ -1,6 +1,8 @@
 package main
 
 import (
+	"context"
+
 	"github.com/flamefatex/config"
 	"github.com/flamefatex/log"
 	"github.com/flamefatex/log/rotation"
@@ -24,10 +26,11 @@ func main() {
 	initLogger()
 	// print service version
 	log.Infof("serviceName: %s, version: %s, build: %s", serviceName, Version, GitCommit)
+	ctx := context.Background()
 	// 初始化客户端
 	initClient()
 	// 初始化并启动svc
-	initAndRunSvc()
+	initAndRunSvc(ctx)
 	// 启动gin
 	runGinServer()
 	// 启动grpc gateway
