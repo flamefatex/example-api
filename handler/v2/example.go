@@ -9,13 +9,18 @@ import (
 	protos_v2 "github.com/flamefatex/protos/goout/example-api/v2"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/empty"
+
+	"github.com/flamefatex/example-api/service/example"
 )
 
 type exampleHandler struct {
+	exampleSvc example.ExampleSvc
 }
 
-func NewExampleHandler() *exampleHandler {
-	return &exampleHandler{}
+func NewExampleHandler(exampleSvc example.ExampleSvc) *exampleHandler {
+	return &exampleHandler{
+		exampleSvc: exampleSvc,
+	}
 }
 
 func (h *exampleHandler) All(ctx context.Context, req *protos_v2.ExampleAllRequest) (resp *protos_v2.ExampleAllResponse, err error) {
