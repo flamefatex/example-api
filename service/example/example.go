@@ -14,6 +14,10 @@ var (
 	once     sync.Once
 )
 
+type ExampleSvc interface {
+	Name() string
+}
+
 type exampleSvc struct {
 }
 
