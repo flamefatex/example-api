@@ -20,13 +20,13 @@ var (
 )
 
 func main() {
+	ctx := context.Background()
 	// config
 	config.Init(serviceName)
 	// log
 	initLogger()
 	// print service version
 	log.Infof("serviceName: %s, version: %s, build: %s", serviceName, Version, GitCommit)
-	ctx := context.Background()
 	// 初始化客户端
 	initClient()
 	// 初始化并启动svc
