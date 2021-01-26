@@ -17,9 +17,9 @@ type exampleHandler struct {
 	exampleSvc example.ExampleSvc
 }
 
-func NewExampleHandler(exampleSvc example.ExampleSvc) *exampleHandler {
+func NewExampleHandler() *exampleHandler {
 	return &exampleHandler{
-		exampleSvc: exampleSvc,
+		exampleSvc: example.ExampleSvcInstance(),
 	}
 }
 

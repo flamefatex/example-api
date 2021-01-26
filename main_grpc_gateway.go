@@ -5,10 +5,6 @@ import (
 	"net"
 	"net/http"
 
-	v2 "github.com/flamefatex/example-api/handler/v2"
-	v2_ext "github.com/flamefatex/example-api/handler/v2/external"
-	"github.com/flamefatex/example-api/service/example"
-
 	"github.com/flamefatex/log"
 	protos_v2 "github.com/flamefatex/protos/goout/example-api/v2"
 	protos_v2_ext "github.com/flamefatex/protos/goout/example-api/v2/external"
@@ -17,6 +13,9 @@ import (
 	grpc_validator "github.com/grpc-ecosystem/go-grpc-middleware/validator"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
+
+	v2 "github.com/flamefatex/example-api/handler/v2"
+	v2_ext "github.com/flamefatex/example-api/handler/v2/external"
 )
 
 // GrpcGateway
@@ -39,7 +38,7 @@ func runGrpcGatewayServer() {
 		)),
 	)
 
-	protos_v2.RegisterExampleServiceServer(grpcServer, v2.NewExampleHandler(example.ExampleSvcInstance()))
+	protos_v2.RegisterExampleServiceServer(grpcServer, v2.NewExampleHandler())
 
 	// external
 	protos_v2_ext.RegisterExampleServiceServer(grpcServer, v2_ext.NewExampleHandler())
