@@ -46,8 +46,8 @@ github.com/envoyproxy/go-control-plane v0.9.4/go.mod h1:6rpuAdCZL397s3pYoYcLgu1m
 github.com/envoyproxy/go-control-plane v0.9.9-0.20201210154907-fd9021fe5dad/go.mod h1:cXg6YxExXjJnVBQHBLXeUAgxn2UodCpnH306RInaBQk=
 github.com/envoyproxy/protoc-gen-validate v0.1.0/go.mod h1:iSmxcyjqTsJpI2R4NaDN7+kN2VEUnK/pcBlmesArF7c=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
-github.com/flamefatex/config v1.0.2 h1:+MROdhSEZY9t3al6fVT7M40A/IYqpm5K/bLGmRUh2zI=
-github.com/flamefatex/config v1.0.2/go.mod h1:WWYV6Qv+SfsysiG5p6KoUPvf0p8mLq+lJ2SNUTxkUrU=
+github.com/flamefatex/config v1.0.5 h1:f9A11SwOsrVLozFY/zXWE/86LRqkvV0SHqNbZX152mk=
+github.com/flamefatex/config v1.0.5/go.mod h1:JcK/6y8Tp5aXh1SBLuTNKdlc7iY89iKNbjE7IpHxt/I=
 github.com/flamefatex/log v1.0.4 h1:WBKOWM9b+VuwMy0WyQpaZGE+Fc8dMWyESMzjLiEy8S8=
 github.com/flamefatex/log v1.0.4/go.mod h1:2drTqILwnUXRW10LptE+sShB2tRWcQWrL0MFbU08Hsg=
 github.com/flamefatex/protos v0.0.2 h1:v88mAvZPfRJSBVIkw5Yfd89QpB+J0sQlSdO86t/ooEE=

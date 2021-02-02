@@ -5,6 +5,9 @@ import (
 	"net"
 	"net/http"
 
+	"github.com/flamefatex/config"
+	v2 "github.com/flamefatex/example-api/handler/v2"
+	v2_ext "github.com/flamefatex/example-api/handler/v2/external"
 	"github.com/flamefatex/log"
 	protos_v2 "github.com/flamefatex/protos/goout/example-api/v2"
 	protos_v2_ext "github.com/flamefatex/protos/goout/example-api/v2/external"
@@ -13,15 +16,21 @@ import (
 	grpc_validator "github.com/grpc-ecosystem/go-grpc-middleware/validator"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
-
-	v2 "github.com/flamefatex/example-api/handler/v2"
-	v2_ext "github.com/flamefatex/example-api/handler/v2/external"
 )
 
 // GrpcGateway
 type grpcGWRegister func(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
 
 func runGrpcGatewayServer() {
+	envGrpcAddr := config.Config().GetString("grpc_gateway.grpc_addr")
+	envHttpAddr := config.Config().GetString("grpc_gateway.http_addr")
+	if envGrpcAddr != "" {
+		grpcAddr = envGrpcAddr
+	}
+	if envHttpAddr != "" {
+		httpAddr = envHttpAddr
+	}
+
 	// grpc
 	lis, err := net.Listen("tcp", grpcAddr)
 	if err != nil {
@@ -57,7 +66,7 @@ func runGrpcGatewayServer() {
 		protos_v2_ext.RegisterExampleServiceHandlerFromEndpoint,
 	}
 
-	log.Debugf("start grpc-gateway")
+	log.Debugf("start grpc-gateway, grpc addr: %s,http port: %s", grpcAddr, httpAddr)
 	if err := run(regs); err != nil {
 		log.Fatal(err)
 	}

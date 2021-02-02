@@ -3,7 +3,7 @@ module github.com/flamefatex/example-api
 go 1.14
 
 require (
-	github.com/flamefatex/config v1.0.2
+	github.com/flamefatex/config v1.0.5
 	github.com/flamefatex/log v1.0.4
 	github.com/flamefatex/protos v0.0.2
 	github.com/gin-gonic/gin v1.6.3
@@ -18,7 +18,6 @@ require (
 	github.com/mwitkow/go-proto-validators v0.3.2 // indirect
 	github.com/spf13/afero v1.5.1 // indirect
 	github.com/ugorji/go v1.2.3 // indirect
-	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.16.0
 	golang.org/x/crypto v0.0.0-20201221181555-eec23a3978ad // indirect
 	golang.org/x/net v0.0.0-20210119194325-5f4716e94777 // indirect
